@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshavardhan Ravula - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at 80% 20%, #c9e7ff 0%, transparent 60%),
+                        radial-gradient(circle at 20% 80%, #e0eafc 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            animation: moveBg 12s linear infinite alternate;
+        }
+        @keyframes moveBg {
+            0% { background-position: 0% 0%, 100% 100%; }
+            100% { background-position: 100% 100%, 0% 0%; }
+        }
+        .hero-pro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+            gap: 3em;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .hero-left img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #0078d4;
+            box-shadow: 0 8px 32px rgba(0,120,212,0.10);
+            margin-bottom: 1.5em;
+            background: #fff;
+        }
+        .hero-right {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 500px;
+        }
+        .hero-right h1 {
+            font-size: 2.7em;
+            margin: 0 0 0.2em 0;
+            color: #222;
+            font-weight: 700;
+        }
+        .hero-right .role {
+            font-size: 1.3em;
+            color: #0078d4;
+            font-weight: 500;
+            margin-bottom: 0.7em;
+        }
+        .hero-right .tagline {
+            font-size: 1.1em;
+            color: #444;
+            margin-bottom: 1.2em;
+            font-style: italic;
+        }
+        .hero-right .intro {
+            font-size: 1.15em;
+            color: #444;
+            margin-bottom: 2em;
+            line-height: 1.6;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1.2em;
+            margin-bottom: 2em;
+        }
+        .cta-buttons a, .cta-buttons button {
+            background: #0078d4;
+            color: #fff;
+            padding: 0.8em 2em;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.08em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-buttons a.secondary, .cta-buttons button.secondary {
+            background: #fff;
+            color: #0078d4;
+            border: 2px solid #0078d4;
+        }
+        .cta-buttons a:hover, .cta-buttons button:hover {
+            background: #005fa3;
+            color: #fff;
+            transform: translateY(-3px) scale(1.04);
+        }
+        .cta-buttons a.secondary:hover, .cta-buttons button.secondary:hover {
+            background: #e0eafc;
+            color: #005fa3;
+        }
+        .skills-bar {
+            display: flex;
+            gap: 2em;
+            margin-bottom: 2em;
+            flex-wrap: wrap;
+        }
+        .skill-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2em;
+            color: #0078d4;
+            margin-bottom: 0.2em;
+        }
+        .skill-label {
+            font-size: 0.95em;
+            color: #333;
+            margin-top: 0.2em;
+        }
+        .quick-stats {
+            display: flex;
+            gap: 2em;
+            margin-bottom: 1.5em;
+        }
+        .stat {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,120,212,0.07);
+            padding: 1em 1.5em;
+            text-align: center;
+            min-width: 110px;
+        }
+        .stat .stat-num {
+            font-size: 1.5em;
+            color: #0078d4;
+            font-weight: 700;
+        }
+        .stat .stat-label {
+            font-size: 1em;
+            color: #444;
+        }
+        .social-icons {
+            display: flex;
+            gap: 1.2em;
+            margin-top: 0.5em;
+        }
+        .social-icons a {
+            color: #0078d4;
+            font-size: 1.7em;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .social-icons a:hover {
+            color: #222;
+            transform: scale(1.2);
+        }
+        .featured-projects {
+            margin: 3em auto 2em auto;
+            max-width: 900px;
+            z-index: 2;
+            position: relative;
+        }
+        .featured-title {
+            font-size: 1.5em;
+            color: #0078d4;
+            margin-bottom: 1em;
+            text-align: center;
+            font-weight: 600;
+        }
+        .project-cards {
+            display: flex;
+            gap: 2em;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,120,212,0.07);
+            padding: 1.2em 1em;
+            width: 260px;
+            text-align: left;
+            transition: box-shadow 0.2s, transform 0.2s;
+            position: relative;
+        }
+        .project-card:hover {
+            box-shadow: 0 8px 32px rgba(0,120,212,0.13);
+            transform: translateY(-6px) scale(1.03);
+            z-index: 2;
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.7em;
+            height: 120px;
+            object-fit: cover;
+        }
+        .project-card h3 {
+            margin: 0.2em 0 0.4em 0;
+            color: #222;
+            font-size: 1.15em;
+        }
+        .project-card p {
+            font-size: 0.98em;
+            color: #444;
+            margin-bottom: 0.7em;
+        }
+        .project-links {
+            display: flex;
+            gap: 1em;
+        }
+        .project-links a {
+            color: #0078d4;
+            font-size: 1em;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+        .testimonial-carousel {
+            margin: 2em auto 0 auto;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,120,212,0.07);
+            padding: 1.5em 1em;
+            text-align: center;
+            position: relative;
+        }
+        .testimonial-quote {
+            font-size: 1.1em;
+            color: #444;
+            font-style: italic;
+            min-height: 3em;
+        }
+        .testimonial-author {
+            margin-top: 0.7em;
+            color: #0078d4;
+            font-weight: 600;
+        }
+        .testimonial-nav {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+        .testimonial-nav button {
+            background: #e0eafc;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 1.2em;
+            color: #0078d4;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .testimonial-nav button:hover {
+            background: #0078d4;
+            color: #fff;
+        }
+        @media (max-width: 900px) {
+            .hero-pro { flex-direction: column; gap: 1.5em; min-height: 100vh; }
+            .hero-left, .hero-right { align-items: center; text-align: center; }
+            .hero-right { align-items: center; }
+            .quick-stats { justify-content: center; }
+            .project-cards { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 600px) {
+            .hero-left img { width: 120px; height: 120px; }
+            .hero-right h1 { font-size: 2em; }
+            .stat { min-width: 80px; padding: 0.7em 0.8em; }
+            .project-card { width: 98vw; }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <!-- Header will be injected here by header.js -->
+    <main>
+        <section class="hero-pro">
+            <div class="hero-left">
+                <img src="assets/profile.jpg" alt="Harshavardhan Ravula">
+            </div>
+            <div class="hero-right">
+                <h1>Harshavardhan Ravula</h1>
+                <div class="role">AI Engineer & Full Stack Developer</div>
+                <div class="tagline">Turning ideas into intelligent solutions.</div>
+                <div class="intro">
+                    I’m a Computer Science Engineering student at Sathyabama Institute of Science and Technology, specializing in Artificial Intelligence.<br>
+                    I build robust AI-driven and web solutions, love solving real-world problems, and enjoy collaborating on innovative projects.
+                </div>
+                <div class="skills-bar">
+                    <div class="skill-icon"><i class="fab fa-python"></i><span class="skill-label">Python</span></div>
+                    <div class="skill-icon"><i class="fas fa-robot"></i><span class="skill-label">AI/ML</span></div>
+                    <div class="skill-icon"><i class="fab fa-html5"></i><span class="skill-label">HTML</span></div>
+                    <div class="skill-icon"><i class="fab fa-java"></i><span class="skill-label">Java</span></div>
+                    <div class="skill-icon"><i class="fas fa-server"></i><span class="skill-label">Backend</span></div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="projects.html">View Projects</a>
+                    <a href="about.html" class="secondary">About Me</a>
+                    <a href="contact.html" class="secondary">Contact</a>
+                    <button onclick="window.open('assets/HarshavardhanRavula_Resume.pdf','_blank')" class="secondary"><i class="fas fa-download"></i> Resume</button>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">3</div>
+                        <div class="stat-label">Internships</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">5+</div>
+                        <div class="stat-label">Skills</div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/Harsha-005" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/harshavardhan-ravula-a58430326/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:rharsha0005@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-projects">
+            <div class="featured-title">Featured Projects</div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Organic Farming">
+                    <h3>Organic Farming Platform</h3>
+                    <p>Connecting farmers and buyers, promoting sustainable agriculture with real-time data and AI insights.</p>
+                    <div class="project-links">
+                        <a href="#">Demo</a>
+                        <a href="#">Source</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Zoo Animal Classification">
+                    <h3>Zoo Animal Classification</h3>
+                    <p>AI-powered tool for classifying zoo animals, aiding research and education with image recognition.</p>
+                    <div class="project-links">
+                        <a href="#">Demo</a>
+                        <a href="#">Source</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Resume Screening">
+                    <h3>AI Resume Screening</h3>
+                    <p>Smart application that screens and ranks resumes using NLP and machine learning for HR teams.</p>
+                    <div class="project-links">
+                        <a href="#">Demo</a>
+                        <a href="#">Source</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-carousel" id="testimonial-carousel">
+            <div class="testimonial-quote" id="testimonial-quote">
+                "Harshavardhan is a quick learner and a dedicated team player. His AI project contributions were outstanding!"
+            </div>
+            <div class="testimonial-author" id="testimonial-author">
+                — Priya Sharma, Project Mentor
+            </div>
+            <div class="testimonial-nav">
+                <button onclick="prevTestimonial()"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="nextTestimonial()"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Harshavardhan Ravula</p>
+    </footer>
+    <script src="header.js"></script>
+    <script>
+        // Testimonial carousel logic
+        const testimonials = [
+            {
+                quote: "Harshavardhan is a quick learner and a dedicated team player. His AI project contributions were outstanding!",
+                author: "— Priya Sharma, Project Mentor"
+            },
+            {
+                quote: "His backend development skills helped us launch our product on time. Highly recommended!",
+                author: "— Rahul Verma, Startup Founder"
+            },
+            {
+                quote: "A creative thinker who always brings fresh ideas to the table.",
+                author: "— Sneha Reddy, Classmate"
+            }
+        ];
+        let tIndex = 0;
+        function showTestimonial(idx) {
+            document.getElementById('testimonial-quote').textContent = testimonials[idx].quote;
+            document.getElementById('testimonial-author').textContent = testimonials[idx].author;
+        }
+        function prevTestimonial() {
+            tIndex = (tIndex - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(tIndex);
+        }
+        function nextTestimonial() {
+            tIndex = (tIndex + 1) % testimonials.length;
+            showTestimonial(tIndex);
+        }
+        // Optionally auto-rotate
+        setInterval(nextTestimonial, 7000);
+    </script>
+</body>
+</html>
