@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <style>
+        .skills-section {
+            background: #fff;
+            margin: 2em auto;
+            padding: 2em 1em;
+            border-radius: 12px;
+            max-width: 700px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            flex-wrap: wrap;
+            margin-top: 1em;
+        }
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.1em;
+        }
+        .skill-item i {
+            font-size: 2.5em;
+            margin-bottom: 0.3em;
+            color: #222;
+        }
+        .project-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            z-index: 2;
+        }
+        .project-links {
+            margin-top: 0.7em;
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+        }
+        .project-links a {
+            background: #222;
+            color: #fff;
+            padding: 0.3em 1em;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: background 0.2s;
+        }
+        .project-links a:hover {
+            background: #0078d4;
+        }
+        .hero .subtitle-animate {
+            color: #0078d4;
+            font-size: 1.2em;
+            margin-top: 0.5em;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be injected here by header.js -->
+    <main>
+        <section class="hero">
+            <h1>My Projects</h1>
+            <div class="subtitle-animate">Expert in Python, Artificial Intelligence, and Web Development</div>
+            <div class="skills-section">
+                <h2>My Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <i class="fab fa-python" title="Python"></i>
+                        Python
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-robot" title="Artificial Intelligence"></i>
+                        Artificial Intelligence
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-html5" title="HTML"></i>
+                        HTML
+                    </div>
+                </div>
+            </div>
+            <div class="projects-list">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Organic Farming" style="width:100%;border-radius:8px;">
+                    <h2>online Organic Farming</h2>
+                    <p>A web platform promoting organic farming practices, connecting farmers with buyers and sharing sustainable agriculture techniques.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Zoo Animal Classification" style="width:100%;border-radius:8px;">
+                    <h2>Zoo Animal Classification</h2>
+                    <p>An AI-powered tool for classifying zoo animals based on images and characteristics, aiding zookeepers and researchers.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="AI Powered Resume Screening" style="width:100%;border-radius:8px;">
+                    <h2>AI Powered Resume Screening</h2>
+                    <p>A smart application that uses artificial intelligence to screen and rank resumes, streamlining the recruitment process for HR teams.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Harshavardhan Ravula</p>
+    </footer>
+    <script src="header.js"></script>
+</body>
+</html>

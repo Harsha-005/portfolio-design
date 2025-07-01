@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            background-attachment: fixed;
+        }
+        .about-section, .education-section, .experience-section, .achievements-section, .personal-section, .hobbies-section, .testimonials-section, .contact-section, .quote-section, .funfacts-section, .timeline-section {
+            background: rgba(255,255,255,0.95);
+            margin: 2em auto;
+            padding: 2em 1em;
+            border-radius: 18px;
+            max-width: 750px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .about-section:hover, .education-section:hover, .experience-section:hover, .achievements-section:hover, .personal-section:hover, .hobbies-section:hover, .testimonials-section:hover, .contact-section:hover, .quote-section:hover, .funfacts-section:hover, .timeline-section:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+        }
+        .about-section img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1em;
+            border: 4px solid #0078d4;
+        }
+        .about-section h1 {
+            margin-bottom: 0.5em;
+        }
+        .about-section p {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .about-skills {
+            margin-top: 2em;
+        }
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            flex-wrap: wrap;
+            margin-top: 1em;
+        }
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.1em;
+            min-width: 120px;
+        }
+        .skill-item i {
+            font-size: 2.5em;
+            margin-bottom: 0.3em;
+            color: #222;
+        }
+        .skill-bar-container {
+            width: 80%;
+            margin: 0.5em auto 1.5em auto;
+            background: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 18px;
+        }
+        .skill-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #0078d4 60%, #00c6fb 100%);
+            width: 0;
+            color: #fff;
+            text-align: right;
+            padding-right: 8px;
+            font-size: 0.95em;
+            line-height: 18px;
+            border-radius: 8px;
+            transition: width 1.5s;
+        }
+        .section-title {
+            color: #0078d4;
+            margin-bottom: 1em;
+        }
+        .edu-list, .exp-list, .ach-list {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        .edu-item, .exp-item, .ach-item {
+            margin-bottom: 1.5em;
+        }
+        .edu-item h3, .exp-item h3, .ach-item h3 {
+            margin: 0 0 0.3em 0;
+            color: #222;
+        }
+        .edu-item span, .exp-item span, .ach-item span {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .personal-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 1em;
+        }
+        .personal-item {
+            text-align: left;
+            min-width: 180px;
+        }
+        .hobbies-list {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            flex-wrap: wrap;
+            margin-top: 1em;
+        }
+        .hobby-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.1em;
+            min-width: 120px;
+        }
+        .hobby-item i {
+            font-size: 2em;
+            margin-bottom: 0.3em;
+            color: #0078d4;
+        }
+        .testimonial {
+            background: #f4f4f4;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em auto;
+            max-width: 500px;
+            font-style: italic;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .testimonial-author {
+            margin-top: 0.5em;
+            font-weight: bold;
+            color: #0078d4;
+        }
+        .contact-list {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 350px;
+        }
+        .contact-list li {
+            margin-bottom: 1em;
+            font-size: 1.1em;
+        }
+        .contact-list i {
+            margin-right: 0.5em;
+            color: #0078d4;
+        }
+        .quote-section {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #444;
+            background: linear-gradient(90deg, #e0eafc 60%, #cfdef3 100%);
+        }
+        .funfacts-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 1em;
+        }
+        .funfact-item {
+            background: #e0eafc;
+            border-radius: 8px;
+            padding: 1em 1.5em;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            font-size: 1.05em;
+        }
+        .timeline-section {
+            text-align: left;
+        }
+        .timeline-list {
+            border-left: 3px solid #0078d4;
+            margin: 2em 0 0 30px;
+            padding-left: 30px;
+        }
+        .timeline-item {
+            margin-bottom: 2em;
+            position: relative;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 0.2em;
+            width: 18px;
+            height: 18px;
+            background: #0078d4;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #0078d4;
+        }
+        @media (max-width: 800px) {
+            .about-section, .education-section, .experience-section, .achievements-section, .personal-section, .hobbies-section, .testimonials-section, .contact-section, .quote-section, .funfacts-section, .timeline-section {
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be injected here by header.js -->
+    <main>
+        <section class="quote-section">
+            <div>
+                <i class="fas fa-quote-left"></i>
+                "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful."
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <img src="assets/profile.jpg" alt="Harshavardhan Ravula">
+            <h1>About Me</h1>
+            <p>
+                A Computer Science Engineering student specializing in Artificial Intelligence at Sathyabama Institute of Science and Technology.<br>
+                With a strong foundation in Python, Java, and Backend Development, I am passionate about building AI-driven solutions that solve real-world challenges.
+            </p>
+            <div class="about-skills">
+                <h2>My Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <i class="fab fa-python" title="Python"></i>
+                        Python
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 0;" data-width="95%">95%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-robot" title="Artificial Intelligence"></i>
+                        Artificial Intelligence
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 0;" data-width="90%">90%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-html5" title="HTML"></i>
+                        HTML
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 0;" data-width="85%">85%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-java" title="Java"></i>
+                        Java
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 0;" data-width="80%">80%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-server" title="Backend Development"></i>
+                        Backend Development
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 0;" data-width="75%">75%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="funfacts-section">
+            <h2 class="section-title">Fun Facts</h2>
+            <div class="funfacts-list">
+                <div class="funfact-item"><i class="fas fa-globe"></i> Visited 7 states in India</div>
+                <div class="funfact-item"><i class="fas fa-lightbulb"></i> Solved 200+ coding problems online</div>
+                <div class="funfact-item"><i class="fas fa-users"></i> Led a team of 5 in a national hackathon</div>
+                <div class="funfact-item"><i class="fas fa-coffee"></i> Can’t start the day without coffee!</div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline-list">
+                <div class="timeline-item">
+                    <strong>2022</strong> – Started B.Tech in Computer Science Engineering (AI) at Sathyabama Institute.
+                </div>
+                <div class="timeline-item">
+                    <strong>2023</strong> – Completed Python for Data Science certification.
+                </div>
+                <div class="timeline-item">
+                    <strong>2024</strong> – Won a national hackathon and interned at XYZ Tech Solutions.
+                </div>
+                <div class="timeline-item">
+                    <strong>2025</strong> – Working on AI-powered resume screening project.
+                </div>
+            </div>
+        </section>
+
+        <section class="personal-section">
+            <h2 class="section-title">Personal Info</h2>
+            <div class="personal-list">
+                <div class="personal-item"><strong>Name:</strong> Harshavardhan Ravula</div>
+                <div class="personal-item"><strong>Location:</strong> Chennai, India</div>
+                <div class="personal-item"><strong>Languages:</strong> English, Hindi, Telugu, Tamil</div>
+                <div class="personal-item"><strong>Birthday:</strong> 28th February 2005</div>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <h2 class="section-title">Education</h2>
+            <div class="edu-list">
+                <div class="edu-item">
+                    <h3>B.Tech in Computer Science Engineering (AI)</h3>
+                    <span>Sathyabama Institute of Science and Technology, 2022 - 2026</span>
+                    <p>Relevant Coursework: Machine Learning, Data Structures, Algorithms, Database Systems</p>
+                </div>
+                <div class="edu-item">
+                    <h3>Higher Secondary Education</h3>
+                    <span>Alphores College, 2020 - 2022</span>
+                    <p>Graduated with distinction in Mathematics and Computer Science.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="section-title">Experience</h2>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <h3>AI Intern</h3>
+                    <span>XYZ Tech Solutions, Summer 2024</span>
+                    <p>Worked on developing a chatbot for customer support using Python and NLP libraries.</p>
+                </div>
+                <div class="exp-item">
+                    <h3>Backend Developer (Freelance)</h3>
+                    <span>Remote, 2023</span>
+                    <p>Built RESTful APIs for a startup's e-commerce platform using Django and PostgreSQL.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements-section">
+            <h2 class="section-title">Achievements</h2>
+            <div class="ach-list">
+                <div class="ach-item">
+                    <h3>Winner - Hackathon 2024</h3>
+                    <span>National Level Coding Competition</span>
+                    <p>Developed an AI-powered crop disease detection system that won first prize among 100+ teams.</p>
+                </div>
+                <div class="ach-item">
+                    <h3>Certification in Python for Data Science</h3>
+                    <span>Coursera, 2023</span>
+                    <p>Completed a professional certification with hands-on projects in data analysis and visualization.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hobbies-section">
+            <h2 class="section-title">Hobbies & Interests</h2>
+            <div class="hobbies-list">
+                <div class="hobby-item">
+                    <i class="fas fa-futbol"></i>
+                    Cricket, Carrom, Volleyball
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-music"></i>
+                    Listening Music
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-film"></i>
+                    Watching Movies
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-book"></i>
+                    Reading Tech Blogs
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-plane"></i>
+                    Travelling
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonial">
+                "Harshavardhan is a quick learner and a dedicated team player. His AI project contributions were outstanding!"
+                <div class="testimonial-author">— Priya Sharma, Project Mentor</div>
+            </div>
+            <div class="testimonial">
+                "His backend development skills helped us launch our product on time. Highly recommended!"
+                <div class="testimonial-author">— Rahul Verma, Startup Founder</div>
+            </div>
+            <div class="testimonial">
+                "A creative thinker who always brings fresh ideas to the table."
+                <div class="testimonial-author">— Sneha Reddy, Classmate</div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="section-title">Contact Info</h2>
+            <ul class="contact-list">
+                <li><i class="fas fa-envelope"></i> rharsha0005@email.com</li>
+                <li><i class="fas fa-phone"></i> +91 9014894865</li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/harshavardhan-ravula-a58430326/" target="_blank">LinkedIn</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/Harsha-005" target="_blank">GitHub</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Harshavardhan Ravula</p>
+    </footer>
+    <script src="header.js"></script>
+    <script>
+        // Animate skill bars
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.skill-bar').forEach(bar => {
+                setTimeout(() => {
+                    bar.style.width = bar.getAttribute('data-width');
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
